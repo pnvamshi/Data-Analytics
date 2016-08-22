@@ -1,6 +1,5 @@
-# P.N. Vamshi
-# 13EC10044
-# Data Analysis
+# P.N. Vamshi (13EC10044), Manognya Deepthi G (13IM10008), Nikhil Kashyap (13EE10033), Mukesh Sahani (13EC10039), Manoj Meena (13EE10028)
+# Data Analysis (ASSIGNMENT 1)
 
 table1 = read.csv("C:\\Users\\P.N.Vamshi\\Desktop\\Data Analysis\\Data1.csv", header = T, sep = ",")
 table2 = read.csv("C:\\Users\\P.N.Vamshi\\Desktop\\Data Analysis\\Data2.csv", header = T, sep = ",")
@@ -178,7 +177,35 @@ while(j <= number.rows2)
 	j <- j+1
 }
 
-# Subject Wise Median of Mean Values
+# Subject Wise Median of Mean Values in Data1.csv
 cat("\n")
-print("Median of mean values Subject wise")
+print("Median of mean values Subject wise in Data1.csv")
 print(median(mean.subject.data1))
+
+# Subject Wise Median of Mean Values in Data2.csv
+cat("\n")
+print("Median of mean values Subject wise in Data2.csv")
+print(median(mean.subject.data2))
+
+# Variance of Subject Wise Variance Values in Data1.csv
+cat("\n")
+print("Variance of Subject Wise Variance Values in Data1.csv")
+print(var(var.subject.data1))
+
+# Variance of Student Wise Variance Values in Data1.csv
+cat("\n")
+print("Variance of Student Wise Variance Values in Data1.csv")
+print(var(var.student.data1))
+
+# Variance of Subject Wise Variance Values in Data2.csv
+cat("\n")
+print("Variance of Subject Wise Variance Values in Data2.csv")
+print(var(var.subject.data2))
+
+# Variance of Student Wise Variance Values in Data2.csv
+cat("\n")
+print("Variance of Student Wise Variance Values in Data2.csv")
+print(var(var.student.data2))
+
+cat("\n")
+print("Since Variance of Variance Subject wise and Student wise of Data1.csv is least. Hence it is more consistent")
