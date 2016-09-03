@@ -11,10 +11,10 @@ check.integer <- function(N)
 # Function to calculate variance row wise
 rowVars <- function (x,na.rm = TRUE) 
 {
-    sqr = function(x) x * x
-    n = rowSums(!is.na(x))
-    n[n <= 1] = NA
-    return(rowSums(sqr(x - rowMeans(x,na.rm = na.rm)), na.rm = na.rm)/(n - 1))
+	sqr = function(x) x * x
+	n = rowSums(!is.na(x))
+	n[n <= 1] = NA
+	return(rowSums(sqr(x - rowMeans(x,na.rm = na.rm)), na.rm = na.rm)/(n - 1))
 }
 
 # Reading sample size for Binomial Distribution
