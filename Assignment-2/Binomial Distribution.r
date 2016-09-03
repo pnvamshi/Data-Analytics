@@ -8,8 +8,7 @@ check.integer <- function(N)
     !grepl("[^[:digit:]]", format(N,  digits = 20, scientific = FALSE))
 }
 
-t <- 1
-
+# Function to calculate variance row wise
 rowVars <- function (x,na.rm = TRUE) 
 {
     sqr = function(x) x * x
@@ -18,6 +17,8 @@ rowVars <- function (x,na.rm = TRUE)
     return(rowSums(sqr(x - rowMeans(x,na.rm = na.rm)), na.rm = na.rm)/(n - 1))
 }
 
+# Reading sample size for Binomial Distribution
+t <- 1
 while(t)
 {
 	n <- readline(prompt="Enter sample size: ")
@@ -36,8 +37,15 @@ while(t)
 		t <- 0
 }
 
-p <- readline(prompt="Enter probability of success: ")
-p <- as.numeric(p)
+# Reading probability of success for Binomial Distribution
+t <- 1
+while(t)
+{
+	p <- readline(prompt="Enter probability of success: ")
+	p <- as.numeric(p)
+	if (p<1&& p>=0)
+		t <- 0
+}
 
 i <- 1
 while(i <= 10000)
@@ -47,26 +55,9 @@ while(i <= 10000)
 	i <- i+1
 }
 
-cat("\n")
-j <- 1
-mean.row.mat1 = vector(length = n-1)
-while(j <= n)
-{
-	mean.row.mat1[j] <- rowMeans(mat1[j,1:n, drop=FALSE],na.rm = TRUE)
-	print(paste("Mean of Row [",j,"] is "))
-	print(mean.row.mat1[j])
-	j <- j+1
-}
+mat.mean <- matrix(rowMeans(mat1,na.rm = TRUE), 10000, n, byrow = T)
 
-cat("\n")
-j <- 1
-var.row.mat1 = vector(length = n-1)
-while(i <= n)
-{
-	var.row.mat1[j] <- rowVars(mat1,na.rm = TRUE)
-	print(paste("Variance of Student [",j,"] is "))
-	print(var.row.mat1[j])
-	j <- j+1
-}
+mat.var <- matrix(rowVars(mat1, na.rm = TRUE), 10000, n, byrow = T)
 
-#print(rowVars(mat1,na.rm = TRUE))
+hist(mat.mean)
+hist(mat.var)
