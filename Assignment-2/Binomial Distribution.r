@@ -1,6 +1,7 @@
 # P.N. Vamshi (13EC10044), Manognya Deepthi G (13IM10008), Nikhil Kashyap (13EE10033), Mukesh Sahani (13EC10039), Manoj Meena (13EE10028)
 # Data Analysis (ASSIGNMENT 2)
 # Group: DA-04
+# Binomial Distribution
 
 # Function to check a given number is integer or not
 check.integer <- function(N)
@@ -47,17 +48,14 @@ while(t)
 		t <- 0
 }
 
-i <- 1
-while(i <= 10000)
-{
-	seq1 <- dbinom(0:n, s, p)
-	mat1 <- matrix(seq1, 10000, n, byrow = T)
-	i <- i+1
-}
 
-mat.mean <- matrix(rowMeans(mat1,na.rm = TRUE), 10000, n, byrow = T)
+seq1 <- rbinom(n*10000, s, p)
+mat1 <- matrix(seq1, 10000, n, byrow = T)
+	
 
-mat.var <- matrix(rowVars(mat1, na.rm = TRUE), 10000, n, byrow = T)
+binomial.mean <- matrix(rowMeans(mat1,na.rm = TRUE), 10000, n, byrow = T)
 
-hist(mat.mean)
-hist(mat.var)
+binomial.var <- matrix(rowVars(mat1, na.rm = TRUE), 10000, n, byrow = T)
+
+hist(binomial.mean)
+hist(binomial.var)
