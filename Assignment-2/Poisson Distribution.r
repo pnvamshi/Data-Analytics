@@ -38,14 +38,9 @@ while(t)
 		t <- 0
 }
 
+seq1 <- rpois(n*10000, s)
+mat1 <- matrix(seq1, 10000, n, byrow = T)
 
-i <- 1
-while(i <= 10000)
-{
-	seq1 <- rpois(0:n, s)
-	mat1 <- matrix(seq1, 10000, n, byrow = T)
-	i <- i+1
-}
 
 poisson.mean <- matrix(rowMeans(mat1,na.rm = TRUE), 10000, n, byrow = T)
 
