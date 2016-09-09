@@ -48,13 +48,10 @@ while(t)
 		t <- 0
 }
 
-i <- 1
-while(i <= 10000)
-{
-	seq1 <- rnorm(0:n, s, p)
-	mat1 <- matrix(seq1, 10000, n, byrow = T)
-	i <- i+1
-}
+
+seq1 <- rnorm(n*10000, s, p)
+mat1 <- matrix(seq1, 10000, n, byrow = T)
+
 
 normal.mean <- matrix(rowMeans(mat1,na.rm = TRUE), 10000, n, byrow = T)
 
