@@ -7,4 +7,4 @@ Repository for Data Analytics [CS40003] course assignments.
 
 3) Assignment 3 (Submitted on 06-November-2016) - Predicting Mumbai Housing Price 
 
-4) Assignment 4 (Submitted on 11-Sept-2016) - Customer Churn Prediction
+4) Assignment 4 (Submitted on 05-December-2016) - Customer Churn Prediction
